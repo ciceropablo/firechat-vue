@@ -19,9 +19,9 @@ export default {
 
   computed: {
     getPosition() {
-      const sender = this.message.sender;
-      const currentUser = this.$store.state.users.currentUser;
-      return (sender === currentUser) ? 'my message' : 'message';
+      const sender = this.message.sender
+      const currentUser = this.$store.state.users.currentUser
+      return (sender === currentUser) ? 'my message' : 'message'
     }
   }
 }

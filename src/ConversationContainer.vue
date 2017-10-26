@@ -43,11 +43,11 @@ export default {
   created() {
     this.$store.state.db.collection('conversations')
       .doc(this.id).onSnapshot(convers => {
-        let source = convers.metadata.hasPendingWrites ? 'Local' : 'Server';
+        let source = convers.metadata.hasPendingWrites ? 'Local' : 'Server'
 
-        console.log(`Source: ${source}`);
+        console.log(`Source: ${source}`)
 
-        const conversData = convers.data();
+        const conversData = convers.data()
         if (convers && conversData) {
           conversData.messages.forEach(message => {
             this.$store.commit('conversations/ADD_MESSAGE', {
